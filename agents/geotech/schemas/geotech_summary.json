@@ -5,16 +5,90 @@
   "additionalProperties": false,
   "required": [
     "project_id",
+    "report_type",
     "document_summary",
     "findings",
-    "risk_flags"
+    "risk_flags",
+    "boring_log_summary"
   ],
   "properties": {
     "project_id": {
       "type": "string"
     },
+    "report_type": {
+      "type": "string",
+      "enum": [
+        "desktop_geotech",
+        "preliminary_geotech",
+        "construction_geotech",
+        "karst_evaluation",
+        "corrosion_evaluation",
+        "unknown"
+      ]
+    },
     "document_summary": {
       "type": "string"
+    },
+    "boring_log_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boring_count",
+        "borings",
+        "refusal_observed"
+      ],
+      "properties": {
+        "boring_count": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "borings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "boring_id",
+              "termination_depth",
+              "termination_depth_units",
+              "refusal",
+              "confidence"
+            ],
+            "properties": {
+              "boring_id": {
+                "type": "string"
+              },
+              "termination_depth": {
+                "type": ["number", "null"]
+              },
+              "termination_depth_units": {
+                "type": ["string", "null"]
+              },
+              "refusal": {
+                "type": "string",
+                "enum": ["yes", "no", "unclear"]
+              },
+              "confidence": {
+                "type": "string",
+                "enum": ["high", "medium", "low"]
+              },
+              "source_reference": {
+                "type": "string"
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "refusal_observed": {
+          "type": "string",
+          "enum": ["yes", "no", "unclear"]
+        },
+        "summary_notes": {
+          "type": "string"
+        }
+      }
     },
     "findings": {
       "type": "array",

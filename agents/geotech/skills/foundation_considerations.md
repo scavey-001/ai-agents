@@ -4,6 +4,8 @@
 
 Summarize foundation-related implications stated in the report or reasonably inferred from clearly cited evidence.
 
+This skill is not the current primary focus. Use it only after the basic boring-log facts have been captured.
+
 ## Focus Areas
 
 - Recommended foundation types

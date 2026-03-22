@@ -4,6 +4,8 @@
 
 Identify report content that may materially affect design, constructability, or scope.
 
+This skill is not the current primary focus. Use it only after the basic boring-log facts have been captured.
+
 ## Common Flags
 
 - Shallow groundwater
