@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Geotechnical Summary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "document_summary",
+    "findings",
+    "risk_flags"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "document_summary": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "topic",
+          "statement",
+          "confidence"
+        ],
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "source_reference": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "flag",
+          "confidence"
+        ],
+        "properties": {
+          "flag": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "basis": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "foundation_considerations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

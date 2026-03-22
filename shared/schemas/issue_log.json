@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Issue Log",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "issues"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "summary",
+          "status",
+          "severity"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["open", "resolved", "deferred"]
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "owner": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

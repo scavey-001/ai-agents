@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_id",
+    "project_name",
+    "created_date",
+    "status"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "client_name": {
+      "type": "string"
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["intake", "working", "review", "complete"]
+    },
+    "primary_agent": {
+      "type": "string"
+    },
+    "source_documents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
