@@ -1,0 +1,67 @@
+{
+  "project_id": "demo_project_01",
+  "report_type": "unknown",
+  "document_summary": "Auto-generated summary focused on preliminary geotechnical boring basics from narrative text.",
+  "boring_log_summary": {
+    "boring_count": 42,
+    "borings": [
+      {
+        "boring_id": "B-SS-1",
+        "termination_depth": 28.5,
+        "termination_depth_units": "feet BGS",
+        "refusal": "yes",
+        "confidence": "high",
+        "source_reference": "narrative text",
+        "notes": "Narrative states practical refusal was encountered."
+      },
+      {
+        "boring_id": "B-SS-2",
+        "termination_depth": 25.9,
+        "termination_depth_units": "feet BGS",
+        "refusal": "yes",
+        "confidence": "high",
+        "source_reference": "narrative text",
+        "notes": "Narrative states practical refusal was encountered."
+      }
+    ],
+    "refusal_observed": "yes",
+    "summary_notes": "Report narrative states 42 total soil borings. Narrative states 39 array-area borings were advanced to approximately 20 feet BGS or until practical refusal. Substation borings B-SS-1 and B-SS-2 reached practical refusal at approximately 28.5 feet and 25.9 feet BGS."
+  },
+  "findings": [
+    {
+      "topic": "boring_count",
+      "statement": "Report narrative states 42 soil borings were advanced.",
+      "confidence": "high",
+      "source_reference": "narrative text"
+    },
+    {
+      "topic": "boring_ids",
+      "statement": "Report narrative references boring IDs/ranges: B-01, B-02, B-03, B-04, B-05, B-06, B-07, B-08, B-09, B-10, B-11, B-12, B-13, B-14, B-15, B-16, B-17, B-18, B-19, B-20, B-21, B-22, B-23, B-24, B-25, B-26, B-27, B-28, B-29, B-30, B-31, B-32, B-33, B-34, B-35, B-36, B-37, B-38, B-39, B-M1, B-SS-1, B-SS-2.",
+      "confidence": "medium",
+      "source_reference": "narrative text"
+    },
+    {
+      "topic": "array_borings",
+      "statement": "39 array-area borings were advanced to approximately 20 feet BGS or until practical refusal.",
+      "confidence": "high",
+      "source_reference": "narrative text"
+    },
+    {
+      "topic": "substation_borings",
+      "statement": "Substation borings B-SS-1 and B-SS-2 encountered practical refusal at approximately 28.5 feet and 25.9 feet BGS.",
+      "confidence": "high",
+      "source_reference": "narrative text"
+    },
+    {
+      "topic": "rock_coring",
+      "statement": "Rock coring is reported at B-29.",
+      "confidence": "high",
+      "source_reference": "narrative text"
+    }
+  ],
+  "risk_flags": [],
+  "foundation_considerations": [],
+  "open_questions": [
+    "Narrative gives only a general array-boring depth statement, not individual termination depths for each array boring."
+  ]
+}

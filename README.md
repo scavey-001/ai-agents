@@ -19,3 +19,11 @@ This repository provides a structured workspace for domain-specific AI agents, s
 2. Use `projects/<project_name>/working/` for intermediate artifacts.
 3. Write final deliverables to `projects/<project_name>/output/`.
 4. Reuse shared conventions from `standards/` and `shared/`.
+
+## Text Extraction Workflow
+
+- `shared/scripts/pdf_to_text.py` uses direct PDF text extraction via `pdftotext`.
+- Write extracted text to `projects/<project_name>/working/`.
+- Use `shared/scripts/detect_narrative_end.py` as a TOC-first narrative planner with heuristic fallback.
+- Prefer TOC-guided planning to decide how many narrative pages to extract.
+- For born-digital reports, direct text extraction should be the default path.

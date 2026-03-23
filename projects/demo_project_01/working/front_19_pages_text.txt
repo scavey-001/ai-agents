@@ -1,0 +1,2093 @@
+--- Page 1 ---
+
+EXHIBIT 10
+
+APPENDIX 10-A
+Geotechnical Report
+
+Somerset Solar, LLC
+
+--- Page 2 ---
+
+Geotechnical Report (Rev. 1)
+AES – Somerset Solar Project
+
+November 21, 2021
+
+11/21/2021
+______________________________
+Vatsal Shah, PE, Ph.D
+New York PE No. 090390
+
+--- Page 3 ---
+
+Table of Contents
+
+1
+
+Introduction .............................................................................................................................. 1
+
+2
+
+Methodology ............................................................................................................................ 1
+
+3
+
+2.1
+
+Soil Borings....................................................................................................................... 1
+
+2.2
+
+Electrical Resistivity Testing .............................................................................................. 1
+
+2.3
+
+Pile Load Testing .............................................................................................................. 2
+
+2.3.1
+
+Test Pile Installation ...................................................................................................... 2
+
+2.3.2
+
+Uplift Load Testing ........................................................................................................ 2
+
+2.3.3
+
+Lateral Load Testing ...................................................................................................... 2
+
+Geology and Subsurface Conditions ........................................................................................ 2
+3.1
+
+4
+
+Groundwater ..................................................................................................................... 3
+
+Laboratory Results ................................................................................................................... 4
+4.1
+
+Soil Index Testing ............................................................................................................. 4
+
+4.2
+
+Thermal Resistivity Testing ............................................................................................... 4
+
+4.3
+
+Corrosivity Testing ............................................................................................................ 5
+
+4.4
+
+California Bearing Ratio .................................................................................................... 5
+
+5
+
+Pile Load Testing Results ........................................................................................................ 7
+
+6
+
+Seismic Site Classification ....................................................................................................... 9
+6.1
+
+7
+
+8
+
+9
+
+Preliminary Seismic Evaluation ......................................................................................... 9
+
+Foundation Considerations ...................................................................................................... 9
+7.1
+
+Corrosion Considerations.................................................................................................. 9
+
+7.2
+
+Frost & Adfreeze Considerations .................................................................................... 10
+
+7.3
+
+Soil Shrink & Swell Potential ........................................................................................... 11
+
+7.4
+
+Recommended Soil Parameters for Pile Design ............................................................. 11
+
+Construction Recommendations ............................................................................................ 12
+8.1
+
+Excavation ...................................................................................................................... 12
+
+8.2
+
+Dewatering ..................................................................................................................... 12
+
+8.3
+
+Subgrade Preparation ..................................................................................................... 13
+
+8.4
+
+Backfilling and Re-use of Native Soils ............................................................................. 13
+
+8.5
+
+Access Roads ................................................................................................................. 14
+
+8.6
+
+Pile Drivability ................................................................................................................. 15
+
+Limitations.............................................................................................................................. 16
+
+TABLE OF CONTENTS
+
+--- Page 4 ---
+
+1
+
+Introduction
+
+ANS Geo, Inc. is pleased to provide this Geotechnical Report (Report) to AES to summarize the results of our
+geotechnical field investigation in support of the proposed Somerset Solar Energy Generation project located
+in Somerset, New York. To guide the design and construction of the proposed solar facility, ANS Geo
+developed and implemented a geotechnical investigation program which encompassed a desktop study of
+local geologic conditions, soil borings, field electrical resistivity testing, pile load testing, laboratory thermal
+resistivity and corrosion testing, California Bearing Ratio (CBR) and laboratory soil material testing.
+ANS Geo notes that this document includes updates from a second mobilization (November 2021)
+which included additional explorations at the revised substation location (soil boring and electrical
+resistivity test) and the existing “mound” location south of the central railroad loop (soil boring).
+
+2
+
+Methodology
+
+2.1
+
+Soil Borings
+
+ANS Geo retained Earth Dimensions, Inc., (EDI) of Elma, New York to advance 42 soil borings (B-01 through
+B-39, B-M1, and B-SS-1 through B-SS-2) completed at select locations across the project site between March
+15 and 23, 2021 and again on November 4, 2021. The soil boring locations are depicted in the Investigation
+Location Plan, provided as Attachment A.
+The 39 array-area soil borings were advanced to approximately 20 feet below ground surface (BGS) or until
+practical refusal, whichever was encountered first. The substation borings (B-SS-1 & B-SS-2) were advanced
+until practical refusal which was encountered at approximately 28.5 feet and 25.9 feet BGS, respectively. A
+CME-550x ATV-mounted drill rig was used to collect soil samples using the Standard Penetration Test (SPT)
+Method through hollow-stem augers in accordance with ASTM Standard D1586. Soil samples were generally
+collected continuously within the upper 10 feet in each boring, then in five-foot intervals thereafter to the
+termination depth. In one location (B-29), rock coring was conducted in accordance with ASTM D2113 to
+confirm the presence, type, and quality of bedrock. Soil borings, proposed by ANS Geo and confirmed by AES
+review, were located at relatively evenly spread locations throughout the project’s array area(s). All soil borings
+were overseen and logged by an ANS Geo representative under the direction of a Professional Engineer
+licensed in the State of New York. Typed soil boring logs are presented as Attachment B.
+At select soil boring locations, auger cuttings were collected from near-surface soils with the purpose of
+obtaining bulk soil samples for laboratory California Bearing Ratio (CBR), thermal resistivity testing (TRT), and
+corrosivity testing. Upon completion, each borehole was backfilled to its existing grade with soil cuttings.
+2.2
+
+Electrical Resistivity Testing
+
+As part of our field investigation program, ANS Geo performed field Electrical Resistivity Tomography (ERT)
+testing on May 10 and 11, 2021 and again on November 4, 2021. Testing was conducted at seven (7) locations
+within the proposed array area(s) and two (2) locations withing the proposed substation areas. In-situ soil
+resistivity measurements were obtained by utilizing the Wenner 4-Pin Method in accordance with ASTM G57
+and IEEE Standard 80. Two (2) mutually perpendicular traverses were collected at each array area location
+utilizing “a”-spacings of 2, 5, 10, 25, and 50 feet, “a”-spacings of 2, 5, 10, 25, 50, and 100 feet at the first
+substation area location, and “a”-spacings of 1, 2, 3, 5, 10, 25, 50, 75, 100, 150, and 188 feet at the second
+substation area location. Test results are presented as Attachment C.
+
+Page 1 of 15
+
+--- Page 5 ---
+
+2.3
+
+Pile Load Testing
+2.3.1
+
+Test Pile Installation
+
+As part of our scope of work, ANS Geo conducted pile load testing at 38 accessible locations across the
+proposed solar array area(s) between April 7 and 25, 2021. Each test location included a pair of test piles,
+totaling 76 piles tested for both uplift and lateral capacities. At each test location, W6x9x15 steel sections
+(“piles”) were installed to varying depths between 6.8 and 11 feet BGS through the overburden via direct push
+to significant resistance, then driven to their targeted depths using a GAYK HRE 4000 Pile Driver. Per-pile
+installation rates varied up to 12.3 seconds per foot, with an average of approximately 6.2 seconds per foot.
+The installation and load testing program was overseen and logged by an ANS Geo geotechnical
+representative under the direction of a Professional Engineer licensed in the State of New York.
+2.3.2
+
+Uplift Load Testing
+
+Once driven to the targeted embedment depth, an uplift load test was performed on each test pile in accordance
+with the ASTM D3689 (uplift) test method. The tension load was generally applied through hydraulic load cell
+attached to a rigid tripod reaction frame. Uplift loads were generally applied in one-minute, 1,000-pound
+increments up to 10,000 pounds, where feasible. Once achieved, the load was then unloaded to measure
+residual deflection. After the tension was fully released, the piles were reloaded up to a maximum uplift load of
+roughly 10,000 pounds or one-inch of deflection. ANS Geo notes that several uplift tests were limited in the
+maximum force applied, not due to excessive pile movement, but rather the reaction points settling into the soft
+surrounding ground surface.
+2.3.3
+
+Lateral Load Testing
+
+A lateral load test was also performed at each test location, following each uplift load test, in accordance with
+ASTM D3966 (lateral) test method. Horizontal loads were applied at approximately three (3) feet above grade
+on each pile with the pulling force a hydraulic load cell. Test loads were applied cyclically in one-minute, 500pound increments up to 4,000 pounds, where feasible. Once achieved, the load was immediately released and
+reloaded up to a targeted maximum deflection of approximately one-inch, if not already achieved.
+The location of each pile load test is depicted in the Investigation Location Plan, provided as Attachment A.
+Results of the pile load testing program are summarized within Section 5.
+
+3
+
+Geology and Subsurface Conditions
+
+ANS Geo conducted a brief, desktop review of surficial and bedrock geology maps and reports made available
+by the New York State Geological Survey (NYSGS) and the New York State Education Department (NYSED)
+prior to conducting our field investigation. The available mapping indicates that the native surficial soils are
+predominantly classified as “lacustrine silt and clay” which are described as laminated, calcareous, silts and
+clays. A small portion (approximately 5 percent) of the project resides within soils classified as “till moraine”
+which are described as variable textured material. Bedrock geological mapping indicates the project site is
+underlain entirely by the Queenston formation which predominantly consists of shale, sandstone, and siltstone
+bedrock.
+ANS Geo additional reviewed overburden soil information made available by the USDA’s Natural Resources
+Conservation Service (NRCS). The NRCS classifies the upper six (6) feet of soil primarily as material of the
+Callamer silt loam, Niagara silt loam, and Rhinebeck silt loam units. The full NRCS soil report is provided as
+Attachment G.
+ANS Geo has provided the generalized subsurface conditions within Table 1 below based upon the
+observations made during our geotechnical investigation for the solar project. ANS Geo notes that this profile
+Page 2 of 15
+
+--- Page 6 ---
+
+is highly generalized and that soil boring logs, been provided as Attachment B, should be reviewed for
+location-specific subsurface conditions.
+Table 1 – Generalized Subsurface Profile
+Avg. Depth
+(ft)
+
+Material
+
+Avg.
+Consistency
+
+Description
+
+0’ – 0.5’
+
+Topsoil
+
+-
+
+Two (2) to 10 inches of topsoil existed at surface across most of
+the project area.
+
+0.5’ – 4’
+
+4’ – 10’+
+
+Clay / Silt
+
+Clays and silts of low to medium plasticity were generally
+encountered underlying the topsoil layer. This material frequently
+Medium stiff
+included some sand content and exhibited average pocket
+penetrometer values of 1.5 tons per square foot.
+
+Glacial Till
+
+Heterogeneous soils, typical of glacial till geology, were
+encountered throughout several of the boring locations. This
+layer generally includes varying proportions of gravels, sands,
+clays, and silts. It should also be noted that cobbles and boulders
+are typical of glacial till geology which regularly render drilling
+refusal.
+
+Dense
+
+The mapped soil formations identified within our desktop study are consistent with the findings of our field
+investigations. ANS Geo notes that weathered rock material was encountered within 10 feet of grade within
+one of the soil boring locations (B-31).
+3.1
+
+Groundwater
+
+Water was encountered within a small portion (20 percent) of the soil boring locations between three (3) and
+20 feet below grade at the time of our investigation program. It is our opinion, however, that these water
+levels likely represent perched water conditions rather than static groundwater.
+
+Page 3 of 15
+
+--- Page 7 ---
+
+4
+
+Results
+
+4.1 Soil Index Testing
+Representative soil samples were collected during our investigation and submitted to ANS’s accredited
+materials testing laboratory. A summary of the index laboratory test results is provided within Table 2. Asreceived laboratory test results are included within Attachment D.
+Table 2 – Soil Index Testing Summary
+Sieve Analysis Samples
+% Fines
+
+Boring
+ID
+
+Sample ID
+
+Depth (feet)
+
+% Gravel
+
+% Sand
+
+B-06
+
+S-3
+
+4–6
+
+0.0
+
+B-21
+
+S-4
+
+6–8
+
+0.0
+
+B-24
+
+S-7
+
+18 – 20
+
+3.0
+
+27.7
+
+30.3
+
+39.0
+
+2.0
+
+B-26
+
+S-4
+
+6–8
+
+31.5
+
+23.6
+
+18.1
+
+26.8
+
+8.5
+
+B-M1
+
+S-6
+
+13-15
+
+0.0
+
+17.6
+
+B-SS-1
+
+S-1
+
+0–2
+
+8.6
+
+% Moisture
+
+% Silt
+
+% Clay
+
+21.9
+
+42.3
+
+35.8
+
+17.4
+
+26.0
+
+33.0
+
+41.0
+
+14.7
+
+12.6
+
+82.4
+40.3
+
+19.6
+38.5
+
+15.6
+
+Atterberg Samples
+Boring
+ID
+
+Sample ID
+
+Depth (feet)
+
+Liquid Limit
+
+Plastic Limit
+
+Plasticity Index
+
+% Moisture
+
+USCS
+Symbol
+
+B-01
+
+S-2
+
+2–4
+
+28.1
+
+19.5
+
+8.6
+
+21.1
+
+CL
+
+B-03
+
+S-1
+
+0–2
+
+29.8
+
+20.4
+
+9.4
+
+24.1
+
+CL
+
+B-05
+
+S-3
+
+4–6
+
+27.8
+
+19.2
+
+8.6
+
+16.4
+
+CL
+
+B-07
+
+S-5
+
+8 – 10
+
+28.0
+
+20.4
+
+7.6
+
+12.1
+
+CL
+
+B-10
+
+S-4
+
+6–8
+
+30.3
+
+20.6
+
+9.7
+
+24.5
+
+CL
+
+B-12
+
+S-4
+
+6–8
+
+29.2
+
+19.7
+
+9.5
+
+23.1
+
+CL
+
+B-14
+
+S-5
+
+8 – 10
+
+30.0
+
+20.9
+
+9.1
+
+20.2
+
+CL
+
+B-15
+
+S-5
+
+8 – 10
+
+28.6
+
+20.6
+
+8.0
+
+11.2
+
+CL
+
+B-18
+
+S-6
+
+13 – 15
+
+29.6
+
+20.0
+
+9.6
+
+18.9
+
+CL
+
+B-19
+
+S-2
+
+2–4
+
+30.7
+
+20.7
+
+10.0
+
+19.4
+
+CL
+
+B-20
+
+S-1
+
+0–2
+
+31.2
+
+20.0
+
+11.2
+
+21.1
+
+CL
+
+B-23
+
+S-4
+
+6–8
+
+32.6
+
+20.5
+
+12.1
+
+34.2
+
+CL
+
+B-27
+
+S-6
+
+13 – 15
+
+29.2
+
+19.9
+
+9.3
+
+35.4
+
+CL
+
+B-29
+
+S-2
+
+2–4
+
+30.2
+
+20.4
+
+9.8
+
+19.2
+
+CL
+
+B-33
+
+S-2
+
+2–4
+
+30.3
+
+19.7
+
+10.6
+
+24.4
+
+CL
+
+B-34
+
+S-6
+
+13 – 15
+
+30.7
+
+19.7
+
+11.0
+
+33.6
+
+CL
+
+B-37
+
+S-5
+
+8 – 10
+
+33.3
+
+20.0
+
+13.3
+
+26.6
+
+CL
+
+B-38
+
+S-1
+
+0–2
+
+29.6
+
+19.9
+
+9.7
+
+19.2
+
+CL
+
+B-SS2
+
+S-3
+
+4-6
+
+25.2
+
+18.4
+
+6.8
+
+22.1
+
+CL-ML
+
+4.2 Thermal Resistivity Testing
+ANS Geo collected bulk samples from four (4) locations throughout the project area for laboratory testing of
+Thermal Resistivity. Soils were collected in a five-gallon bucket and delivered to ANS Consultants’ accredited
+laboratory for testing. The soil was compacted to 85 percent of its Standard Proctor Density in accordance with
+ASTM D698, and Thermal Resistivity Testing was conducted in accordance with IEEE Standard 442-2017.
+Results of the thermal testing are summarized within Table 3. Complete, as-received results have been
+provided within Attachment D.
+Page 4 of 15
+
+--- Page 8 ---
+
+Table 3 – Thermal Resistivity Testing Summary
+Thermal Resistivity Values at Various Moisture Contents
+Location
+ID
+
+B-06
+(3’-5’)
+B-20
+(3’-5’)
+B-29
+(3’-5’)
+B-SS2
+(3’-5’)
+
+Material
+Type
+
+Clay
+
+% water
+
+% water
+
+% water
+
+% water
+
+% water
+
+(oC-cm/W)
+
+(oC-cm/W)
+
+(oC-cm/W)
+
+(oC-cm/W)
+
+(oC-cm/W)
+
+0
+
+4
+
+8
+
+12
+
+16.6
+
+665
+
+271
+
+118
+
+88
+
+79
+
+0
+
+3.5
+
+7
+
+10.5
+
+14.9
+
+753
+
+298
+
+115
+
+83
+
+74
+
+0
+
+3.5
+
+7
+
+10.5
+
+14.8
+
+698
+
+283
+
+116
+
+86
+
+77
+
+0
+
+3
+
+5.9
+
+8.9
+
+11.8
+
+363
+
+219
+
+115
+
+72
+
+59
+
+Received
+Moisture
+Content
+(%)
+
+Re-Molded
+Dry
+Density
+(lb/ft3)
+
+25
+
+91.4
+
+21.2
+
+89.3
+
+21.3
+
+94.2
+
+19.2
+
+97.6
+
+Clay
+
+Clay
+
+Silt
+
+4.3 Corrosivity Testing
+ANS Geo collected soil samples at five (5) locations for corrosivity testing. The results of the testing, completed
+by ANS Consultants, have been summarized within Table 4a and are detailed within Attachment D.
+Table 4a – Corrosivity Testing Summary – Soil
+Location ID
+
+pH
+
+Sulfate (mg/kg)
+
+Chloride (mg/kg)
+
+Soil Box (Calc. Resistivity)
+(Ω/cm)
+
+Redox Potential
+(mV)
+
+B-03 (2’-3’)
+
+7.12
+
+18
+
+40
+
+7,000
+
+115
+
+B-12 (2’-3’)
+
+6.88
+
+6
+
+20
+
+7,000
+
+109
+
+B-27 (2’-3’)
+
+7.76
+
+3
+
+25
+
+6,500
+
+111
+
+B-35 (2’-3’)
+
+7.38
+
+12
+
+45
+
+8,500
+
+120
+
+B-SS2 (2’-3’)
+
+8.23
+
+39
+
+45
+
+3,000
+
+108
+
+Given the project area’s close proximity to Lake Ontario, ANS Geo additionally collected groundwater samples
+from four (4) existing site monitoring wells for corrosivity testing. The results of the testing, completed by Alpha
+Analytical, are summarized within Table 4b and are detailed within Attachment D.
+Table 4b – Corrosivity Testing Summary - Groundwater
+Well ID
+
+Acidity
+(mg
+CACO3/L)
+
+Alkalinity
+(mg
+CACO3/L)
+
+Sulfide
+(mg/l)
+
+Redox Potential
+(mV)
+
+Chloride
+(mg/l)
+
+Sulfate
+(mg/l)
+
+SA9122D
+
+11
+
+22.1
+
+ND
+
+-16
+
+9,960
+
+2,070
+
+SA9132S
+
+ND
+
+420
+
+ND
+
+84
+
+41.0
+
+860
+
+SO8305
+
+ND
+
+244
+
+ND
+
+40
+
+315
+
+874
+
+SO8823
+
+ND
+
+542
+
+ND
+
+100
+
+15.4
+
+171
+
+ND = Not Detected
+
+Page 5 of 15
+
+--- Page 9 ---
+
+4.4 California Bearing Ratio
+ANS Geo collected an additional sample at three (3) locations from one (1) to three (3) feet below grade for
+testing of California Bearing Ratio (CBR) in accordance with ASTM D1883 at approximately 90 percent of its
+Standard Proctor Density (ASTM D698). Bulk samples were collected at varying depth intervals to provide
+representative data based on material type observed. The results of the testing, completed by ANS
+Consultants, have been summarized within Table 5 and are detailed within Attachment D.
+Table 5 – California Bearing Ratio Summary
+Location ID
+
+Page 6 of 15
+
+CBR Ratio (%)
+
+B-04
+
+0.7
+
+B-18
+
+1.4
+
+B-31
+
+0.7
+
+--- Page 10 ---
+
+5
+
+Pile Load Testing Results
+
+Table 6 presents the summarized results of the pile load testing program at each test location. Complete Load
+Testing Logs are provided as Attachment E and should be referenced for detailed information.
+Table 6 – Pile Load Testing Summary
+
+Page 7 of 15
+
+Load Test ID
+
+Embedment
+Depth (ft.)
+
+Avg. Pile
+Installation
+Rate (sec/ft)
+
+Approx. Uplift
+Load at 1-inch
+Deflection (lbs)
+
+Approx. Lateral
+Load at 1-inch
+Deflection (lbs)
+
+PT-01A
+PT-01B
+PT-02A
+PT-02B
+PT-03A
+PT-03B
+PT-04A
+PT-04B
+PT-05A
+PT-05B
+PT-06A
+PT-06B
+PT-07A
+PT-07B
+PT-08A
+PT-08B
+PT-09A
+PT-09B
+PT-10A
+PT-10B
+PT-11A
+PT-11B
+PT-12A
+PT-12B
+PT-13A
+PT-13B
+PT-14A
+PT-14B
+PT-15A
+PT-15B
+PT-16A
+PT-16B
+PT-17A
+PT-17B
+PT-18A
+PT-18B
+PT-19A
+PT-19B
+PT-20A
+PT-20B
+PT-21A
+PT-21B
+PT-22A
+PT-22B
+
+10.6
+10.5
+9.5
+9.1
+8
+7.8
+9
+9
+7
+7
+9
+9
+10
+10
+8
+8.2
+7
+7
+9
+9
+10
+10
+9
+9
+8
+8
+10.7
+10.7
+7
+7
+9
+9
+7.1
+7
+8
+8
+10
+10
+10
+10
+9
+9
+7
+7
+
+6.1
+6.8
+11.5
+11.8
+4.7
+6.6
+11.6
+10.6
+5.2
+5.3
+4.0
+6.6
+6.1
+5.5
+5.7
+5.0
+7.4
+5.6
+7.7
+9.6
+11.7
+6.6
+9.0
+5.3
+5.3
+5.7
+10.0
+9.4
+4.9
+5.1
+5.4
+4.6
+7.3
+6.9
+3.9
+5.3
+5.6
+4.3
+7.8
+7.0
+12.3
+7.1
+3.7
+3.0
+
+> 10,000
+> 10,000
+> 10,000
+> 10,000
+> 10,000
+> 10,100
+> 8,800
+> 9,000
+> 10,000
+> 10,000
+> 9,900
+> 10,800
+> 13,000
+> 13,000
+> 10,800
+> 10,800
+> 11,000
+> 11,000
+> 10,000
+> 9,500
+> 10,800
+> 10,000
+> 10,000
+> 11,500
+> 10,000
+> 11,800
+> 13,000
+> 13,000
+> 10,000
+> 8,900
+> 13,000
+> 13,000
+> 10,000
+> 10,000
+> 10,000
+> 8,000
+> 10,000
+> 10,000
+> 10,000
+> 9,300
+> 11,000
+> 8,000
+> 13,000
+> 13,000
+
+4,100
+4,100
+4,000
+3,800
+3,200
+3,300
+4,200
+4,300
+4,200
+4,500
+3,600
+3,600
+4,800
+4,900
+4,800
+4,900
+4,100
+4,100
+4,600
+4,600
+3,600
+3,400
+4,300
+4,600
+3,600
+3,700
+4,300
+4,200
+3,800
+3,600
+5,900
+6,000
+4,500
+4,500
+4,400
+4,700
+4,100
+4,200
+3,700
+3,700
+3,700
+3,800
+4,000
+3,800
+
+--- Page 11 ---
+
+Table 6 (cont.) – Pile Load Testing Summary
+
+Page 8 of 15
+
+Load Test ID
+
+Embedment
+Depth (ft.)
+
+Avg. Pile
+Installation
+Rate (sec/ft)
+
+Approx. Uplift
+Load at 1-inch
+Deflection (lbs)
+
+Approx. Lateral
+Load at 1-inch
+Deflection (lbs)
+
+PT-23A
+PT-23B
+PT-24A
+PT-24B
+PT-25A
+PT-25B
+PT-26A
+PT-26B
+PT-27A
+PT-27B
+PT-28A
+PT-28B
+PT-29A
+PT-29B
+PT-30A
+PT-30B
+PT-31A
+PT-31B
+PT-32A
+PT-32B
+PT-33A
+PT-33B
+PT-34A
+PT-34B
+PT-35A
+PT-35B
+PT-36A
+PT-36B
+PT-38A
+PT-38B
+PT-SSA
+PT-SSB
+
+10
+10
+10.7
+10.3
+6.8
+7
+9
+9
+10
+10
+7
+7
+8
+8
+9
+9
+7
+7
+11
+10.4
+7
+7
+9
+9
+10
+10
+8
+8
+10.6
+10.2
+8
+8
+
+5.8
+5.2
+5.8
+6.1
+6.6
+5.7
+2.8
+3.7
+2.1
+1.7
+5.1
+3.5
+6.9
+4.2
+6.1
+6.0
+3.5
+3.9
+8.3
+5.2
+4.6
+3.0
+9.7
+9.0
+3.7
+3.6
+2.9
+3.6
+6.4
+5.6
+8.2
+8.9
+
+> 10,600
+> 10,200
+> 11,200
+> 11,200
+7,200
+> 10,100
+9,500
+9,800
+> 8,800
+> 10,200
+> 10,000
+9,000
+6,000
+9,500
+> 10,000
+> 8,800
+7,100
+> 10,000
+> 10,000
+> 5,000
+> 10,000
+> 10,000
+> 9,700
+> 10,000
+> 8,500
+> 9,100
+> 10,000
+> 10,000
+> 10,000
+> 10,000
+> 12,500
+> 12,500
+
+4,000
+4,000
+4,200
+4,200
+3,600
+3,700
+3,600
+3,500
+4,100
+4,300
+3,700
+3,800
+3,800
+3,800
+3,700
+3,400
+3,300
+3,600
+3,600
+3,400
+3,800
+3,700
+4,200
+4,000
+3,500
+3,700
+4,300
+4,400
+4,000
+3,900
+4,800
+4,800
+
+--- Page 12 ---
+
+6
+
+Seismic Site Classification
+
+Based on the observations recorded within our subsurface investigation program and utilizing the N-Value
+method as prescribed in Chapter 20 of ASCE 7-16, Site Class D can be assumed as the average condition
+across the project site.
+The seismic ground motion values for this this were obtained from the USGS Seismic Hazard Maps, referenced
+in ASCE 7-16 Standard and provided as Attachment F, and are as follows:
+●
+
+0.2 second spectral response acceleration, SS= 0.167 g
+
+●
+
+1 second spectral response acceleration, S1= 0.046 g
+
+●
+
+Maximum spectral acceleration for short periods, SMS= 0.267 g
+
+●
+
+Maximum spectral acceleration for a 1-second period, SM1= 0.111 g
+
+●
+
+5% damped design spectral acceleration at short periods, SDS= 0.178 g
+
+●
+
+5% damped design spectral acceleration at 1-second period, SD1= 0.074 g
+
+6.1 Preliminary Seismic Evaluation
+The designated seismic site class is anticipated based on results from our investigation program and using
+select areas of the site which have been investigated by ANS Geo. Seismic support data is provided as
+Attachment F. Based on our observation of subsurface conditions, estimated Site Class ratings, and review
+of USGS’s 2018 National Seismic Hazard Map, ANS Geo concludes that there is a low risk of significant seismic
+activity which may impact the proposed solar facility.
+
+7
+
+Foundation Considerations
+
+ANS Geo anticipates that, as typical with solar farm construction, embedded posts, such as W6x9 H-piles, will
+be used to support the proposed solar panels. Conventional shallow foundations such as sonotubes, spread
+footings, or similar systems may also be utilized for equipment pads and associated support structures.
+7.1 Corrosion Considerations
+Given limited testing results measuring the soil and groundwater’s measured acidity, sulfate and chloride
+concentrations, resistivity, and redox potential summarized in Section 4.3 (Tables 4a and 4b), in consideration
+with the soil and moisture conditions observed, the in-situ soil conditions are anticipated to be “moderately”
+corrosive to embedded steel piles. Typically, a zinc coating of 1.7 oz/ft2 (3 mil, or approximately 75
+micrometers) is the minimum thickness for Grade 75 steel (W6x9) as specified by ASTM A123. As such, we
+expect that such piles would generally maintain an approximate lifespan of at least 20 to 30 years.
+In addition, the average chloride concentration obtained from soil and groundwater testing across all discrete
+samples (with the exception of Well SA 9122D which should be considered individually) is roughly 70 partsper-million (ppm, or mg/kg). The concentration of chloride ions affects the corrosion rate of embedded steel1.
+Based on empirical studies performed, the relationship between corrosion rate and chloride concentrations can
+be estimated as:
+CR = 16.28 * ln(CL) – 83.8
+
+1
+
+J. B. Decker, K.M. Rollins, J.C. Ellsworth, “Corrosion Rate Evaluation and Prediction for Piles Based on Long-Term Field
+Performance”, American Society of Civil Engineers Journal of Geotechnical and Geoenvironmental Engineering, 134(4), pp. 341-351
+(2008)
+Page 9 of 15
+
+--- Page 13 ---
+
+Where CR is defined as the “corrosion rate” of steel (in micrometers per year), and CL is the chloride
+concentration in parts-per-million. Using the equation above, and considering an average chloride
+concentration of 70 ppm, the corrosion rate is nearly zero across the planned service life of the facility, with the
+exception of the northeastern area in the vicinity of Well SA9122D. Given the well’s proximity to Lake Ontario,
+groundwater within this area of the site may be brackish and a particularly higher corrosion risk to steel
+foundation posts and concrete foundations (as observed within the sampling results). ANS Geo recommends
+that additional soil corrosivity testing be completed at the northernmost panel locations to confirm these findings
+as additional coating and/or sacrificial steel thickness may be warranted.
+7.2 Frost & Adfreeze Considerations
+Given the location of the project and soils encountered, the potential for frost heave against post foundations
+should be considered. Fine-grained soils, or granular soils with greater than 10 percent fine-grained content
+are frost-susceptible due to the inability of entrapped moisture from infiltrating or evaporating prior to freezing.
+Trapped moisture will begin to create ice lenses, which will grip the steel posts or embedded structures,
+followed by ice-jacking due to frost heave. The phenomenon is more commonly referred to as “adfreeze stress”,
+which can be considered as an external, upward force applied to the post. The magnitude of the upward force
+will depend on the depth of the frost zone, the interface bond stress between embedded structure/material and
+the surrounding area, and the surface area of the structure/material in contact with this bond stress.
+Several methods exist to evaluate frost susceptibility of soils, including determination of fine-grained content
+of near-surface soils, evaluation of air freezing index, and local, empirical correlations such as the Atlas of Soil
+Freezing Depth Extremes for the Northeastern United States.
+The first evaluation is to determine frost susceptibility of the site soils. The earliest method was developed by
+Arthur Casagrande that uses percentage of fine fraction less than 0.02 mm by weight, in which silts and very
+fine sands are considered to have medium to very high frost susceptibility. The method was further expanded
+by the US Army Corps of Engineers (1965) into a widely-used classification system which categorizes soils
+into frost groups F1 through F4. Classification is made in order of increasing frost-susceptibility (ie. worse soils
+are F4), and loss of strength during thaw. Based on the predominant, near-surface soil type at the site (silts
+and clays), the site can be classified as frost group F4.
+Frost penetration depth may be calculated in multiple ways, including local, County, or State building code frost
+depths, the US Army Corps of Engineers method using the modified Berggren Equation, and empirical data.
+Within Niagara County, New York, frost depth is mapped to exist at approximately 54 inches (4.5 feet) below
+grade. However, we recognize that fluctuations in air temperature, snow cover and insulation, and historic
+freezing indices have shown empirical correlations of shallower frost depth. Based on the Atlas of Soil Freezing
+Depth Extremes for the Northeastern United States, for a return period of 25 years, the maximum depth of
+freezing under sod is approximately 30 inches.
+Using the modified Berggren Equation, frost penetration depth can also be calculated as follows:
+
+Where each variable is defined as follows:
+X = depth of frost penetration [m]
+Λ = dimensionless coefficient based on dry density and water content
+n = dimensionless conversion factor from air index to surface freezing index
+kf = thermal conductivity of frozen soil [BTU/ft-hr-°F]
+F = air freezing index [ °F-days]
+Ls = volumetric latent heat of soil [BTU/ft3]
+Page 10 of 15
+
+--- Page 14 ---
+
+Using this relationship, it is recognized that frost penetration depth is directly proportional to the square root of
+thermal conductivity of the frozen soil and surface freezing index, and inversely proportional to the square root
+of volumetric latent heat of the soil. The thermal conductivity of frozen soil is a function of soil type (ie. finegrained or coarse-grained), moisture content, and dry density. The following assumptions are made to calculate
+frost depth at this site:
+1. Mean annual air temperature (MAAT) of 48.4°F from the 1981 – 2020 Climate Normals data taken
+from the National Oceanic and Atmospheric Administration (NOAA)
+2. The average annual number of frost days assumed was 119 days
+3. An air freezing index of 1,037 °F-days for a 25-year return period using NOAA data (Buffalo)
+4. The ratio of surface index to air index (n) of 0.7 for bare soil without any overlying soil or ice
+5. A dry density of 100 lb/ft3 for fine-grained, near-surface soils
+6. An average water content of 25% based on laboratory results for samples within the frost zone
+Using the assumptions above, and input into the modified Berggren Equation, the calculated frost penetration
+depth for a 25-year return period is approximately 32 inches.
+Based on our evaluation, since conditions may exist where snow cover is not present during low temperature
+extremes, and using a calculated depth of frost penetration, ANS Geo recommends that all structural
+foundations be founded at 32 inches (2.7 feet) below grade or deeper, for a 25-year design life, to ensure
+adequate protection from frost conditions which may jeopardize the integrity of subgrade soils and associated
+substructure.
+As predominantly silty and/or clayey soils were observed near grade, ANS Geo recommends that an unfactored
+adfreeze (uplift) stress of 1,500 pounds per square foot (10.4 psi) be considered within the 32-inch frost
+penetration depth of posts for panel foundation sizing and design.
+7.3 Soil Shrink & Swell Potential
+Shrinkage and swelling of soils refer to the volumetric change (decrease and increase) exhibited in primarily
+fine-grained soils due to a change in moisture conditions. The extent of shrinking and swelling is largely
+influenced by the type and amount of clay present in the native near-surface soils. Higher-risk soils generally
+include fine-grained material with a high clay content, greater than 50 percent by weight, and liquid limits of 50
+percent or higher (fat clays). Based on our observed soil conditions and results of laboratory testing, it is our
+professional opinion that the native on-site soils exhibit a low to negligible shrink and/or swell potential in the
+event of significant moisture fluctuation.
+7.4 Recommended Soil Parameters for Pile Design
+Based on our interpretation of the subsurface conditions observed within our investigation programs and results
+of pile load testing, ANS Geo recommends that the soil parameters, as depicted within Table 7, be considered
+for foundation post design purposes.
+
+Page 11 of 15
+
+--- Page 15 ---
+
+Table 7 – Recommended LPILE Soil Parameters
+Depth
+
+Material
+
+Effective
+Unit
+Weight
+
+Internal
+Friction
+Angle
+
+Cohesion
+
+Soil
+Soil
+Strain
+Modulus (k)
+(E50)
+
+Allowable
+Bearing
+Capacity
+
+Allowable
+Side
+Resistance
+
+0’ – 0.5’
+
+Topsoil
+(Soft Clay
+[Matlock])
+
+100 lb/ft3
+
+---
+
+300 lb/ft2
+
+---
+
+0.020
+
+---
+
+---
+
+Clay / Silt
+0.5’ – 2.7’ (Mod Stiff Clay w/o
+Free Water)
+
+110 lb/ft3
+
+---
+
+1,200 lb/ft2
+
+100 lb/in3
+
+0.010
+
+500 lb/ft2
+
+---
+
+Clay / Silt
+2.7’ – 4’ (Mod Stiff Clay w/o
+Free Water)
+
+110 lb/ft3
+
+---
+
+1,200 lb/ft2
+
+100 lb/in3
+
+0.010
+
+1,500 lb/ft2
+
+500 lb/ft2
+
+4’ – 7’
+
+Glacial Till
+(Sand [Reese])
+
+120 lb/ft3
+
+37°
+
+---
+
+200 lb/in3
+
+---
+
+2,500 lb/ft2
+
+350 lb/ft2
+
+7’ – 10’+
+
+Glacial Till
+(Sand [Reese])
+
+125 lb/ft3
+
+38°
+
+---
+
+250 lb/in3
+
+---
+
+3,500 lb/ft2
+
+450 lb/ft2
+
+Note: Italicized material types represent our recommended LPILE soil models.
+
+ANS Geo recommends that allowable side resistance within the upper 2.7 feet be neglected due to frost impact,
+and adfreeze stresses, as noted in Section 7.2, be considered. Pile load testing results and subsurface
+observations were evaluated by ANS Geo using LPILE software to provide these refined soil parameters. ANS
+Geo notes that the soil parameters depicted within Table 7 represent values calibrated to curve-fit our lateral
+load test data; these parameters (effective unit weight and internal friction angle) should not be relied upon for
+other site foundation designs. It is our recommendation that verification load testing and detailed structural
+calculations be performed prior to construction to confirm these recommendations.
+
+8
+
+Construction Recommendations
+
+8.1 Excavation
+Depending on proposed foundation configurations, degree of earthwork, and depth of utilities, some
+excavations may extend deeper than four feet below grade. Excavations deeper than four feet should be
+shored or sloped and benched, in accordance with OSHA regulations, to ensure safe working conditions within
+the excavations. For benching purposes, overburden soils may be considered as “Type B” material and should
+be sloped no steeper than 1H:1V (horizontal to vertical). All OSHA soil classifications should be fielddetermined by the contractor’s “competent person” prior to excavation. Any proposed shoring systems should
+be designed by the contractor’s “competent person”, be certified by a Professional Engineer licensed in the
+State of New York, and should be submitted to the engineer for review. As typical of till geology, the contractor
+should anticipate occasional cobbles or boulders within excavations and earthwork activities.
+8.2 Dewatering
+ANS Geo observed perched water as shallow as three (3) feet below grade at the time of our investigation
+program. Although this does not represent static groundwater levels, the contractor should be prepared to
+manage groundwater, perched water, and/or infiltrated stormwater as needed using localized pump-and-sump
+or similar techniques to allow for concrete foundation construction in-the-dry. Water discharge should be
+managed in compliance with applicable state and local regulations. The contractor should be sure to grade
+the surface as necessary to divert stormwater away from open excavation to the extent possible.
+
+Page 12 of 15
+
+--- Page 16 ---
+
+8.3 Subgrade Preparation
+Prior to the installation of shallow concrete foundations, ANS Geo recommends overexcavating the subgrade
+by at least six (6) inches, lining the exposed material with a geotextile separation fabric, and bringing the
+subgrade back up to the design foundation elevation with compacted structural fill as specified within Table 8.
+Native material beneath the separation fabric should be inspected for unsatisfactory conditions such as
+standing water, frozen soil, organics, protruding cobbles or boulders, or deleterious materials. Should any
+unsatisfactory conditions exist within the native subgrade, the excavation should be undercut an additional six
+inches (12 total inches beneath proposed foundation depth) prior to placement of the geotextile separation
+fabric.
+Table 8 – Recommended Gradation of Structural Fill
+Sieve Size
+
+Percent Passing
+
+3-inch
+
+100
+
+1 ½-inch
+
+60 – 100
+
+No. 4
+
+30 – 60
+
+No. 200
+
+0 – 10
+
+Structural fill material should be placed in loose lifts not exceeding eight (8) inches in height and be compacted
+to at least 95 percent of its Modified Proctor Density in accordance with ASTM D1557.
+8.4 Backfilling and Re-use of Native Soils
+ANS Geo notes that native fine-grained soils (silts and clays) on site will likely be difficult to handle, place, and
+compact without proper moisture conditioning and protection. ANS Geo recommends the following measures
+be considered to reduce the adverse impacts of moisture-sensitive soils:
+•
+•
+
+•
+•
+•
+•
+
+Positive measure should be implemented and maintained to intercept and direct surface water away
+from moisture-sensitive subgrade surfaces.
+Subgrade surfaces should be sloped and, as appropriate, seal-rolled to facilitate proper drainage.
+Surfaces should be properly prepared in anticipation of inclement weather. Moisture should not be
+allowed to collect on subgrade surfaces.
+To the extent practical, the limits of exposed subgrade soils should be minimized.
+Construction traffic should be limited to properly constructed haul roads.
+Disturbed soils should be removed and replaced with compacted controlled fill material.
+In place moisture contents should be maintained with two percent wet/dry of the optimum moisture
+content as determined by the Modified Proctor Test (ASTM D1557).
+
+These soils may be re-used across the project area for fill in landscaped areas; however, it should not be used
+under or above foundations or load-bearing structures where typically imported structural fill is used. Native
+material used as backfill for cable trenches should be handled and placed at a moisture content at or above its
+optimum value to ensure representative thermal properties are maintained.
+In areas around and above installed foundations, large utilities, and other buried site features, ANS Geo
+recommends importing a clean granular material with less than 15 percent fine-grained content for use as
+general backfill. General backfill material should be screened of any cobbles, boulders, and any particles larger
+than 3 inches in diameter, and should not be used beneath any load-bearing structures. General backfill should
+be placed in loose lift thicknesses not exceeding 12 inches and be compacted to at least 95 percent of its
+Modified Proctor Density (ASTM D1557). Soil used as backfill should not be handled when frozen and should
+be free of excessive moisture, organics, and deleterious material.
+In fill areas beneath foundations, access roads, and load-bearing structures, ANS Geo recommends structural
+fill as described in Section 8.3 and Table 8.
+Page 13 of 15
+
+--- Page 17 ---
+
+8.4.1
+
+Re-use of Existing “Mound” Soils
+
+As part of our second phase of investigations at the project site, completed in November 2021, ANS Geo
+advanced a soil boring at/near the top of the existing soil “mound” situated south of the existing central railroad
+“loop” at the project site, bounded to the south by Lake Road. This soil boring is identified as “B-M1” and is
+depicted in the Investigation Location plan, provided as Attachment A. The purpose of this additional data
+point was to identify the composition of the mounded material, as well as assess its suitability as re-use across
+the project site during construction.
+Upon recovery of the soil material, this “mound” was visually classified as maintaining predominately silt and
+clay material within the upper (approximately) 35 feet, underlain by dense sand and likely bedrock around 45
+feet below grade. The upper fine-grained soil horizon was observed to be largely consistent in composition
+and include no debris or deleterious material. Furthermore, laboratory testing on a discrete sample within this
+layer confirmed an organic matter content of approximately 3.3 percent. Productive agricultural soils typically
+contain 3 to 6 percent organic composition. Based on our findings, it is our professional opinion that the
+observed upper soils (within 35 feet of grade) would be suitable for use as topsoil material across the project
+site. It should be noted that this recommendation is based on a single soil boring advanced within this “mound”
+and may not be representative of the entire area. Additional inspection and testing of these soils during
+construction is recommended.
+8.5 Access Roads
+ANS Geo understands that unpaved, stone access roads will be required during construction to facilitate
+access for construction vehicles and heavy equipment deliveries (ie. transformers). Post-construction,
+permanent access roads will be required to enter and exit the project site as well as provide access to the
+equipment pad locations for routine maintenance.
+ANS Geo has performed a preliminary evaluation of the required, final access road thickness considering
+infrequent emergency access for firefighting vehicles, as well as occasional light vehicular traffic such as utility
+pickup truck or similar maintenance vehicle. Assuming a two-inch allowable rut depth, ANS Geo recommends
+access roads be constructed to include at least 12 inches of compacted crushed stone as specified below:
+Table 8 – Recommended Gradation of Crushed Stone
+Sieve Size
+
+Percent Passing
+
+1 ½-inch
+
+100
+
+¾-inch
+
+55 – 90
+
+No. 4
+
+25 – 50
+
+No. 50
+
+5 – 20
+
+No. 200
+
+3 – 10
+
+Our preliminary road evaluation for a post-construction access road assumed the following:
+•
+•
+•
+•
+•
+•
+•
+•
+
+Allowable rut depth: 2-inches
+Vehicle(s) considered: Standard aerial ladder firefighting rig and light-duty pick-up truck
+Frequency of passes: 20 passes per day (light-duty pick-up vehicle)
+Service life: 25 years
+Number of axles: 3
+Axle load: 54,000 lb (maximum rear GAWR, for firefighting rig)
+Subgrade Soil: Very stiff, proof-rolled silty clay
+Assumed CBR: 2% (considering proof-rolling with at least three passes of loaded tandem)
+
+If a biaxial geogrid is placed atop the proof-rolled and prepared subgrade, access road thickness may be
+reduced by two inches. A biaxial geogrid such as Tensar BX1200 or equal is recommended.
+Page 14 of 15
+
+--- Page 18 ---
+
+Prior to permanent roadway construction, the subgrade should be stripped of vegetation and topsoil, and be
+proof-rolled with at least three (3) roundtrip passes of a smooth-drum roller with a minimum operating weight
+of eight (8) tons. The prepared subgrade should be confirmed to maintain a minimum CBR value of 2. If
+required, additional stabilization may be obtained through chemical treatment of the subgrade including
+introduction of lime or cement. Crushed stone should be placed in loose lifts not exceeding eight (8) inches in
+height and be compacted to at least 95 percent of its Modified Proctor Density (ASTM D1557).
+Temporary construction roads may also be left in place as permanent access roads, where appropriate. These
+re-purposed roadways should be back-bladed post-construction and graded to an even, level surface with
+maximum permissible longitudinal and cross slopes in accordance with the site’s civil design criteria.
+As part of the project construction, the contractor should be prepared to design, construct, and maintain access
+roadways for the duration of site activities. During construction, the delivery and movement of heavier loads
+such as transformers, inverters, delivery of steel and concrete, and transportation of modules is expected. It
+should be understood that these loads and vehicles are larger than what has been considered in the preliminary
+access road design evaluation, which is focused on post-construction condition including infrequent fire-fighting
+rigs and routine light-duty trucks and maintenance vehicles. The contractor should complete an independent
+access road evaluation considering the construction-phase loading and the contractors means and methods.
+It is possible that the construction-phase access road may require a thicker, temporary access road, the use
+of geogrid, and/or considerations for routine maintenance of the access roads after heavier traffic. The
+contractor will be required to maintain serviceable access roads throughout construction and at turn-over of
+the facility, including backfill ruts, back-blading and re-compacting soft and rutted areas, re-shaping roads to
+promote drainage and safe passage of traffic, and other improvements.
+8.6 Pile Drivability
+ANS Geo anticipates that, as typical with solar farm construction, solar panels will be supported by steel HPiles (wide-flanged sections) driven to approximately 10 to 12 feet below grade. It is ANS Geo’s professional
+opinion that the parameters provided in Section 7.3 may be used to preliminarily size the proposed piles,
+however, we recommend verification load testing prior to construction using final design loads, the intended
+pile profile, and the planned pile depth. These steel piles are typically installed via direct-push, vibration, and/or
+percussive hammer methods.
+Based on our observations within our limited investigation program, we anticipate that occasional refusals
+(cobbles and/or boulders) may be encountered at the foundation post locations within the anticipated
+embedment depths, however, we expect this frequency to be approximately 10 to 20 percent of pile locations,
+or less. It should be noted that this is a high-level estimate based on a limited number of test pile installations
+across the site.
+ANS Geo recommends that the contractor be prepared to pre-drill at proposed post locations to clear
+obstructions, as needed. We recommend that, if required, pre-drilled holes be completed to a diameter slightly
+smaller than the diagonal dimension of the proposed pile section to ensure a tight fit once the pile is driven to
+its targeted depth. For example, a six (6)-inch diameter hole may be drilled and utilized for W6x9 section
+(approx. 7.1-inch diagonal measurement). The contractor should be aware, however, that heavier sections (ie.
+W6x12 or W6x15) may have limiting “bending” capacity in its flanges, and therefore require a hole of a slightly
+larger proportion.
+
+Page 15 of 15
+
+--- Page 19 ---
+
+9
+
+Limitations
+
+ANS Geo notes that the findings and recommendations presented within this Geotechnical Report are based
+on our investigation program conducted in March through May 2021 and our engineering judgment. Should the
+scope of the project or proposed site layout change, ANS Geo should be given the opportunity to review the
+applicability of the collected information and modify our recommendations, as needed.
+We sincerely appreciate the opportunity to support this project, and please feel free to contact us should you
+have any questions regarding the findings of this Report.
+
+Attachments
+Attachment A – Location Plans
+Attachment B – Soil Boring Logs
+Attachment C – Electrical Resistivity Testing Results
+Attachment D – Laboratory Results
+Attachment E – Pile Load Testing Logs
+Attachment F – Seismic Support Data
+Attachment G – NRCS Soil Report
+
+Page 16 of 15

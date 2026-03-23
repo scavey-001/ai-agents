@@ -1,0 +1,226 @@
+{
+  "strategy": "toc:last_top_level_narrative_section",
+  "toc_page": 3,
+  "toc_entries": [
+    {
+      "section_number": "1",
+      "title": "Introduction",
+      "report_page": 1
+    },
+    {
+      "section_number": "2",
+      "title": "Methodology",
+      "report_page": 1
+    },
+    {
+      "section_number": "2.1",
+      "title": "Soil Borings",
+      "report_page": 1
+    },
+    {
+      "section_number": "2.2",
+      "title": "Electrical Resistivity Testing",
+      "report_page": 1
+    },
+    {
+      "section_number": "2.3",
+      "title": "Pile Load Testing",
+      "report_page": 2
+    },
+    {
+      "section_number": "2.3.1",
+      "title": "Test Pile Installation",
+      "report_page": 2
+    },
+    {
+      "section_number": "2.3.2",
+      "title": "Uplift Load Testing",
+      "report_page": 2
+    },
+    {
+      "section_number": "2.3.3",
+      "title": "Lateral Load Testing",
+      "report_page": 2
+    },
+    {
+      "section_number": null,
+      "title": "Geology and Subsurface Conditions",
+      "report_page": 2
+    },
+    {
+      "section_number": "4",
+      "title": "Groundwater",
+      "report_page": 3
+    },
+    {
+      "section_number": null,
+      "title": "Laboratory Results",
+      "report_page": 4
+    },
+    {
+      "section_number": "4.1",
+      "title": "Soil Index Testing",
+      "report_page": 4
+    },
+    {
+      "section_number": "4.2",
+      "title": "Thermal Resistivity Testing",
+      "report_page": 4
+    },
+    {
+      "section_number": "4.3",
+      "title": "Corrosivity Testing",
+      "report_page": 5
+    },
+    {
+      "section_number": "4.4",
+      "title": "California Bearing Ratio",
+      "report_page": 5
+    },
+    {
+      "section_number": "5",
+      "title": "Pile Load Testing Results",
+      "report_page": 7
+    },
+    {
+      "section_number": "6",
+      "title": "Seismic Site Classification",
+      "report_page": 9
+    },
+    {
+      "section_number": "9",
+      "title": "Preliminary Seismic Evaluation",
+      "report_page": 9
+    },
+    {
+      "section_number": null,
+      "title": "Foundation Considerations",
+      "report_page": 9
+    },
+    {
+      "section_number": "7.1",
+      "title": "Corrosion Considerations",
+      "report_page": 9
+    },
+    {
+      "section_number": "7.2",
+      "title": "Frost & Adfreeze Considerations",
+      "report_page": 10
+    },
+    {
+      "section_number": "7.3",
+      "title": "Soil Shrink & Swell Potential",
+      "report_page": 11
+    },
+    {
+      "section_number": "7.4",
+      "title": "Recommended Soil Parameters for Pile Design",
+      "report_page": 11
+    },
+    {
+      "section_number": null,
+      "title": "Construction Recommendations",
+      "report_page": 12
+    },
+    {
+      "section_number": "8.1",
+      "title": "Excavation",
+      "report_page": 12
+    },
+    {
+      "section_number": "8.2",
+      "title": "Dewatering",
+      "report_page": 12
+    },
+    {
+      "section_number": "8.3",
+      "title": "Subgrade Preparation",
+      "report_page": 13
+    },
+    {
+      "section_number": "8.4",
+      "title": "Backfilling and Re-use of Native Soils",
+      "report_page": 13
+    },
+    {
+      "section_number": "8.5",
+      "title": "Access Roads",
+      "report_page": 14
+    },
+    {
+      "section_number": "8.6",
+      "title": "Pile Drivability",
+      "report_page": 15
+    },
+    {
+      "section_number": null,
+      "title": "Limitations",
+      "report_page": 16
+    }
+  ],
+  "top_level_sections": [
+    {
+      "section_number": "1",
+      "title": "Introduction",
+      "report_page": 1
+    },
+    {
+      "section_number": "2",
+      "title": "Methodology",
+      "report_page": 1
+    },
+    {
+      "section_number": null,
+      "title": "Geology and Subsurface Conditions",
+      "report_page": 2
+    },
+    {
+      "section_number": "4",
+      "title": "Groundwater",
+      "report_page": 3
+    },
+    {
+      "section_number": null,
+      "title": "Laboratory Results",
+      "report_page": 4
+    },
+    {
+      "section_number": "5",
+      "title": "Pile Load Testing Results",
+      "report_page": 7
+    },
+    {
+      "section_number": "6",
+      "title": "Seismic Site Classification",
+      "report_page": 9
+    },
+    {
+      "section_number": "9",
+      "title": "Preliminary Seismic Evaluation",
+      "report_page": 9
+    },
+    {
+      "section_number": null,
+      "title": "Foundation Considerations",
+      "report_page": 9
+    },
+    {
+      "section_number": null,
+      "title": "Construction Recommendations",
+      "report_page": 12
+    },
+    {
+      "section_number": null,
+      "title": "Limitations",
+      "report_page": 16
+    }
+  ],
+  "selected_end_section": {
+    "section_number": null,
+    "title": "Limitations",
+    "report_page": 16
+  },
+  "detected_narrative_end_page": 19,
+  "detected_narrative_end_report_page": 16,
+  "total_pages_seen": 19
+}
