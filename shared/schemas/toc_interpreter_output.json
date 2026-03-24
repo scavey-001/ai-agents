@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/toc_interpreter_output.json",
+  "title": "TOC Interpreter Output",
+  "type": "object",
+  "required": [
+    "version",
+    "strategy",
+    "toc_page_pdf",
+    "toc_entries",
+    "top_level_sections",
+    "narrative_end_recommendation",
+    "total_pdf_pages_seen"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "strategy": {
+      "type": "string"
+    },
+    "toc_page_pdf": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "toc_entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/toc_entry"
+      }
+    },
+    "top_level_sections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/toc_entry"
+      }
+    },
+    "narrative_end_recommendation": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "report_page",
+        "pdf_page",
+        "section_number",
+        "section_title",
+        "reason"
+      ],
+      "properties": {
+        "report_page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pdf_page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "section_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "section_title": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "total_pdf_pages_seen": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "$defs": {
+    "toc_entry": {
+      "type": "object",
+      "required": [
+        "section_number",
+        "title",
+        "report_page",
+        "section_type"
+      ],
+      "properties": {
+        "section_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "report_page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "section_type": {
+          "type": "string",
+          "enum": [
+            "narrative",
+            "non_narrative"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
