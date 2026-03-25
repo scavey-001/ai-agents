@@ -2,6 +2,13 @@
 
 ## Latest Session Result
 
+- Added repo-local `.env` support for `OPENAI_API_KEY`; `.env` is gitignored and `.env.example` is the safe template
+- `shared/scripts/toc_interpreter.py` now supports `auto`, `deterministic`, and `openai` modes
+- `shared/scripts/toc_interpreter.py` now attempts OpenAI Responses API TOC interpretation when `OPENAI_API_KEY` is present
+- `shared/scripts/toc_interpreter.py` still falls back to deterministic TOC interpretation in `auto` mode if the API call fails
+- TOC extraction logic now captures multi-page TOC content instead of only the first TOC page
+- Live OpenAI API test reached the API successfully but failed with `429 insufficient_quota`
+- Current blocker for LLM-backed TOC interpretation is API quota/billing, not local key loading
 - Implemented `shared/scripts/toc_interpreter.py` with strict JSON output for TOC sections, section types, and narrative endpoint recommendation
 - Added `shared/schemas/toc_interpreter_output.json` to formalize the TOC interpreter contract
 - `shared/scripts/detect_narrative_end.py` now consumes `toc_interpreter` output for TOC-first endpoint selection before heuristic fallback
@@ -28,7 +35,7 @@
 - Parser now converts narrative boring facts into structured JSON at `projects/demo_project_01/output/geotech_summary.json`
 - Demo TOC has been captured in `agents/geotech/tests/fixtures/demo_project_01_toc_sections.md`
 - Important TOC result: narrative appears to continue through `9 Limitations` on report page `16`
-- Next recommended step: design and implement an LLM-backed `toc_interpreter` stage that outputs strict JSON
+- Next recommended step: resolve OpenAI API quota/billing, then validate the live LLM-backed TOC interpreter on the demo sample
 
 ## 1. Project Overview
 
@@ -53,8 +60,8 @@
 
 ## 3. Active Tasks
 
-- Design an LLM-backed `toc_interpreter` stage
-- Define strict JSON output for TOC sections, section types, and recommended narrative endpoint
+- Resolve OpenAI API quota/billing so the live TOC interpreter can run
+- Validate the OpenAI-backed `toc_interpreter` output on the demo sample once quota is available
 - Keep initial LLM input small, ideally first `3-5` pages or TOC pages only
 - Use TOC sections to determine how many pages must be extracted for the main narrative
 - Keep heuristic detection only as a fallback
@@ -88,6 +95,7 @@
 - Full boring-log extraction is not implemented yet
 - Some tracked `__pycache__` artifacts already exist in git history and may need separate cleanup later
 - Current TOC parsing is serviceable for the demo sample but likely too brittle long-term without LLM assistance
+- Live OpenAI integration is implemented but currently blocked by `insufficient_quota` on the configured API key
 
 ## 7. File Structure Notes
 
@@ -121,6 +129,6 @@
 - 5. Inspect `agents/geotech/scripts/parse_geotech_text.py`
 - 6. Read `agents/geotech/tests/fixtures/demo_project_01_toc_sections.md`
 - 7. Start with the new LLM-assisted TOC interpretation direction
-- 8. Design a strict JSON schema for `toc_interpreter` output
-- 9. Use that output to decide the target narrative page range, then rerun parsing as needed
+- 8. Confirm `OPENAI_API_KEY` is present in `.env` and API billing/quota is active
+- 9. Run `shared/scripts/toc_interpreter.py --mode openai` on the demo sample, then use that output to decide the target narrative page range
 - 10. Update `memory.md` at the end of the session with new decisions, tasks, and issues

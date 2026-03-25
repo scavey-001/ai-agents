@@ -28,3 +28,9 @@ This repository provides a structured workspace for domain-specific AI agents, s
 - Use `shared/scripts/detect_narrative_end.py` as a TOC-first narrative planner with heuristic fallback.
 - Prefer TOC-guided planning to decide how many narrative pages to extract.
 - For born-digital reports, direct text extraction should be the default path.
+
+## OpenAI Configuration
+
+- Put `OPENAI_API_KEY=...` in a local `.env` file at the repo root for LLM-backed TOC interpretation.
+- `.env` is gitignored; use `.env.example` as the safe template.
+- `shared/scripts/toc_interpreter.py` runs in `auto` mode by default, using OpenAI when `OPENAI_API_KEY` is present and falling back to deterministic TOC logic otherwise.
