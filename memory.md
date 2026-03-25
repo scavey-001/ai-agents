@@ -2,6 +2,14 @@
 
 ## Latest Session Result
 
+- Added repo-level `skills/` folder and portable `skills/grill-me/SKILL.md` workflow skill for design/plan stress-testing
+- Added root `AGENTS.md` with repo-wide commit approval gate, session handoff habit, and session close ritual
+- README now documents repo-level reusable skills under `skills/`
+- Refactored `shared/scripts/toc_interpreter.py` to emit the new `toc_interpreter_output.json` schema
+- New TOC interpreter output now includes `toc_sections`, section `level`, richer `section_type`, confidence, notes, and `fallback_reason`
+- `shared/scripts/detect_narrative_end.py` now consumes the new TOC schema and still maps the recommended report page back to PDF page cutoff
+- Added repo baseline files: `.python-version`, `requirements.txt`, and `AGENTS.md`
+- README now documents runtime baseline, `pdftotext`, local OpenAI configuration, and optional LLM-backed TOC usage
 - Added repo-local `.env` support for `OPENAI_API_KEY`; `.env` is gitignored and `.env.example` is the safe template
 - `shared/scripts/toc_interpreter.py` now supports `auto`, `deterministic`, and `openai` modes
 - `shared/scripts/toc_interpreter.py` now attempts OpenAI Responses API TOC interpretation when `OPENAI_API_KEY` is present
@@ -62,6 +70,7 @@
 
 - Resolve OpenAI API quota/billing so the live TOC interpreter can run
 - Validate the OpenAI-backed `toc_interpreter` output on the demo sample once quota is available
+- Decide whether the new repo-level `skills/` folder should be documented further or gain additional reusable workflow skills
 - Keep initial LLM input small, ideally first `3-5` pages or TOC pages only
 - Use TOC sections to determine how many pages must be extracted for the main narrative
 - Keep heuristic detection only as a fallback
@@ -76,6 +85,8 @@
 - Trim extraction scope before model analysis instead of feeding full 300+ page reports
 - Focus geotech agent scope first on preliminary geotech reports and boring basics
 - Ignore Windows `Zone.Identifier` sidecar files via `.gitignore`
+- Keep repo-specific workflow preferences in root `AGENTS.md`
+- Keep portable workflow skills in root `skills/` rather than only in machine-local Codex config
 - Use the table of contents as the preferred guide for determining the narrative OCR window when available
 - Determine the narrative endpoint from the last top-level narrative TOC section, walking backward from the end and skipping appendix/exhibit-style sections
 - Prefer a hybrid architecture: deterministic scripts for extraction/storage, LLMs for TOC interpretation and report-structure judgment
@@ -102,6 +113,9 @@
 - Root docs:
 - `README.md`
 - `memory.md`
+- `AGENTS.md`
+- Root workflow skills:
+- `skills/`
 - Standards:
 - `standards/`
 - Shared scripts and schemas:

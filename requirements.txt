@@ -1,0 +1,2 @@
+# This repo currently uses Python standard library modules only.
+# Add pinned third-party dependencies here when they are introduced.

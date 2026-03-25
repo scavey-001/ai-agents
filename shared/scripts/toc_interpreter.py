@@ -19,15 +19,24 @@ TOC_ENTRY_PATTERN = re.compile(
     r"(?:(\d+(?:\.\d+)*)\s+)?([A-Z][A-Za-z0-9&/,\-()' ]{2,}?)\s*\.{2,}\s*(\d+)",
     re.IGNORECASE,
 )
-NON_NARRATIVE_TITLE_PATTERNS = [
+APPENDIX_TITLE_PATTERNS = [
     re.compile(r"\bappendix\b", re.IGNORECASE),
     re.compile(r"\bappendices\b", re.IGNORECASE),
+    re.compile(r"\breferences?\b", re.IGNORECASE),
+]
+EXHIBIT_TITLE_PATTERNS = [
     re.compile(r"\bexhibits?\b", re.IGNORECASE),
     re.compile(r"\battachments?\b", re.IGNORECASE),
-    re.compile(r"\bboring logs?\b", re.IGNORECASE),
-    re.compile(r"\bfigures?\b", re.IGNORECASE),
     re.compile(r"\bplates?\b", re.IGNORECASE),
-    re.compile(r"\breferences?\b", re.IGNORECASE),
+]
+FIGURE_TABLE_TITLE_PATTERNS = [
+    re.compile(r"\bfigures?\b", re.IGNORECASE),
+    re.compile(r"\btables?\b", re.IGNORECASE),
+    re.compile(r"\btable of figures\b", re.IGNORECASE),
+]
+BORING_LOG_TITLE_PATTERNS = [
+    re.compile(r"\bboring logs?\b", re.IGNORECASE),
+    re.compile(r"\bboring log attachments?\b", re.IGNORECASE),
 ]
 OPENAI_API_URL = "https://api.openai.com/v1/responses"
 DEFAULT_OPENAI_MODEL = "gpt-4.1-mini"
@@ -54,17 +63,16 @@ def parse_toc_entries(page_text: str) -> list[dict[str, object]]:
     normalized = re.sub(r"\s+", " ", page_text)
     normalized = re.sub(r"^\s*Table of Contents\s*", "", normalized, flags=re.IGNORECASE)
     entries: list[dict[str, object]] = []
-    seen: set[tuple[str, int]] = set()
+    seen: set[tuple[str | None, str, int]] = set()
 
     for match in TOC_ENTRY_PATTERN.finditer(normalized):
         section_number = match.group(1) or None
         title = re.sub(r"\s+", " ", match.group(2)).strip(" .")
         report_page = int(match.group(3))
-        key = (title.lower(), report_page)
+        key = (section_number, title.lower(), report_page)
         if key in seen:
             continue
         seen.add(key)
-
         entries.append(
             {
                 "section_number": section_number,
@@ -97,30 +105,8 @@ def merge_toc_entries(*entry_lists: list[dict[str, object]]) -> list[dict[str, o
     return merged
 
 
-def is_non_narrative_title(title: str) -> bool:
-    return any(pattern.search(title) for pattern in NON_NARRATIVE_TITLE_PATTERNS)
-
-
-def classify_section_type(title: str) -> str:
-    if is_non_narrative_title(title):
-        return "non_narrative"
-    return "narrative"
-
-
-def is_top_level_entry(entry: dict[str, object]) -> bool:
-    section_number = entry.get("section_number")
-    title = str(entry.get("title", "")).strip()
-    if not title or title.lower().startswith("table of contents"):
-        return False
-    if isinstance(section_number, str) and section_number:
-        return "." not in section_number
-    if re.match(r"^[A-Z][A-Za-z/&,\-()' ]+$", title):
-        return True
-    return False
-
-
 def find_toc_pages(
-    pages: list[tuple[int, str]]
+    pages: list[tuple[int, str]],
 ) -> tuple[int | None, list[tuple[int, str]], list[dict[str, object]]]:
     toc_page_index: int | None = None
     toc_pages: list[tuple[int, str]] = []
@@ -149,23 +135,133 @@ def find_toc_pages(
     return toc_pages[0][0], toc_pages, toc_entries
 
 
+def section_level(section_number: str | None, title: str) -> int:
+    if isinstance(section_number, str) and section_number:
+        return section_number.count(".") + 1
+    if re.match(r"^[A-Z][A-Za-z/&,\-()' ]+$", title.strip()):
+        return 1
+    return 1
+
+
+def classify_section_type(title: str) -> str:
+    if any(pattern.search(title) for pattern in BORING_LOG_TITLE_PATTERNS):
+        return "boring_logs"
+    if any(pattern.search(title) for pattern in FIGURE_TABLE_TITLE_PATTERNS):
+        return "figure_table"
+    if any(pattern.search(title) for pattern in EXHIBIT_TITLE_PATTERNS):
+        return "exhibit"
+    if any(pattern.search(title) for pattern in APPENDIX_TITLE_PATTERNS):
+        return "appendix"
+    if title.strip():
+        return "narrative"
+    return "unknown"
+
+
+def is_narrative_section(section: dict[str, object]) -> bool:
+    return str(section.get("section_type")) == "narrative"
+
+
+def is_top_level_section(section: dict[str, object]) -> bool:
+    return int(section.get("level", 1)) == 1
+
+
+def normalize_toc_sections(toc_entries: list[dict[str, object]]) -> list[dict[str, object]]:
+    sections: list[dict[str, object]] = []
+    for entry in toc_entries:
+        title = str(entry.get("title", "")).strip()
+        section_number = entry.get("section_number")
+        sections.append(
+            {
+                "section_number": section_number,
+                "title": title,
+                "report_page": int(entry["report_page"]),
+                "level": section_level(section_number if isinstance(section_number, str) else None, title),
+                "section_type": classify_section_type(title),
+            }
+        )
+    return sections
+
+
+def build_fallback_payload(
+    *,
+    fallback_reason: str | None,
+    notes: list[str],
+    toc_sections: list[dict[str, object]] | None = None,
+) -> dict[str, object]:
+    payload: dict[str, object] = {
+        "toc_sections": toc_sections or [],
+        "recommended_narrative_end_report_page": None,
+        "recommended_narrative_end_section_title": None,
+        "confidence": "low",
+        "notes": notes,
+        "n_a_fields": [
+            "recommended_narrative_end_report_page",
+            "recommended_narrative_end_section_title",
+        ],
+        "fallback_reason": fallback_reason,
+    }
+    return payload
+
+
 def choose_narrative_end_section(
-    toc_entries: list[dict[str, object]],
-) -> tuple[dict[str, object] | None, str, list[dict[str, object]]]:
-    if not toc_entries:
-        return None, "no_toc_entries", []
+    toc_sections: list[dict[str, object]],
+) -> tuple[dict[str, object] | None, list[dict[str, object]]]:
+    if not toc_sections:
+        return None, []
 
-    top_level_sections = [entry for entry in toc_entries if is_top_level_entry(entry)]
+    top_level_sections = [section for section in toc_sections if is_top_level_section(section)]
     if not top_level_sections:
-        top_level_sections = toc_entries
+        top_level_sections = toc_sections
 
-    for entry in reversed(top_level_sections):
-        title = str(entry["title"])
-        if is_non_narrative_title(title):
-            continue
-        return entry, "last_top_level_narrative_section", top_level_sections
+    for section in reversed(top_level_sections):
+        if is_narrative_section(section):
+            return section, top_level_sections
+    return None, top_level_sections
 
-    return None, "all_top_level_sections_non_narrative", top_level_sections
+
+def deterministic_toc_payload(
+    toc_entries: list[dict[str, object]],
+    *,
+    fallback_reason: str | None = None,
+    extra_notes: list[str] | None = None,
+) -> dict[str, object]:
+    toc_sections = normalize_toc_sections(toc_entries)
+    if not toc_sections:
+        notes = ["No TOC sections were available for interpretation."]
+        if extra_notes:
+            notes.extend(extra_notes)
+        return build_fallback_payload(
+            fallback_reason=fallback_reason or "no_toc_entries",
+            notes=notes,
+        )
+
+    selected_section, top_level_sections = choose_narrative_end_section(toc_sections)
+    notes = [
+        f"Interpreted {len(toc_sections)} TOC sections.",
+        f"Found {len(top_level_sections)} top-level sections.",
+    ]
+    if extra_notes:
+        notes.extend(extra_notes)
+
+    if selected_section is None:
+        notes.append("No top-level narrative section could be identified.")
+        return build_fallback_payload(
+            fallback_reason=fallback_reason or "all_top_level_sections_non_narrative",
+            notes=notes,
+            toc_sections=toc_sections,
+        )
+
+    notes.append("Selected the last top-level narrative section as the recommended narrative endpoint.")
+    payload: dict[str, object] = {
+        "toc_sections": toc_sections,
+        "recommended_narrative_end_report_page": int(selected_section["report_page"]),
+        "recommended_narrative_end_section_title": str(selected_section["title"]),
+        "confidence": "high",
+        "notes": notes,
+        "n_a_fields": [],
+        "fallback_reason": fallback_reason,
+    }
+    return payload
 
 
 def load_dotenv(env_path: Path = DEFAULT_ENV_PATH) -> None:
@@ -184,162 +280,92 @@ def load_dotenv(env_path: Path = DEFAULT_ENV_PATH) -> None:
         os.environ.setdefault(key, value)
 
 
-def build_final_payload(
-    *,
-    pages: list[tuple[int, str]],
-    toc_page_pdf: int | None,
-    toc_entries: list[dict[str, object]],
-    top_level_sections: list[dict[str, object]],
-    selected: dict[str, object] | None,
-    strategy: str,
-) -> dict[str, object]:
-    recommendation: dict[str, object] | None = None
-    if toc_page_pdf is not None and selected is not None:
-        report_page = int(selected["report_page"])
-        first_narrative_pdf_page = min(toc_page_pdf + 1, len(pages))
-        recommended_pdf_page = min(first_narrative_pdf_page + report_page - 1, len(pages))
-        recommendation = {
-            "report_page": report_page,
-            "pdf_page": recommended_pdf_page,
-            "section_number": selected.get("section_number"),
-            "section_title": selected.get("title"),
-            "reason": strategy,
-        }
-
-    return {
-        "version": "1.1",
-        "strategy": strategy,
-        "toc_page_pdf": toc_page_pdf,
-        "toc_entries": toc_entries,
-        "top_level_sections": top_level_sections,
-        "narrative_end_recommendation": recommendation,
-        "total_pdf_pages_seen": len(pages),
-    }
-
-
-def interpret_toc_deterministic(text: str) -> dict[str, object]:
-    pages = split_pages(text)
-    toc_page_pdf, _, toc_entries = find_toc_pages(pages)
-
-    if toc_page_pdf is None:
-        return build_final_payload(
-            pages=pages,
-            toc_page_pdf=None,
-            toc_entries=[],
-            top_level_sections=[],
-            selected=None,
-            strategy="deterministic:toc_not_found",
-        )
-
-    enriched_entries: list[dict[str, object]] = []
-    for entry in toc_entries:
-        section_title = str(entry["title"])
-        enriched_entries.append(
-            {
-                **entry,
-                "section_type": classify_section_type(section_title),
-            }
-        )
-
-    selected, selection_strategy, top_level_sections = choose_narrative_end_section(enriched_entries)
-    return build_final_payload(
-        pages=pages,
-        toc_page_pdf=toc_page_pdf,
-        toc_entries=enriched_entries,
-        top_level_sections=top_level_sections,
-        selected=selected,
-        strategy=f"deterministic:{selection_strategy}",
-    )
-
-
 def build_llm_input(
-    toc_pages: list[tuple[int, str]],
+    toc_pages: list[tuple[int, str]] | None,
     parsed_entries: list[dict[str, object]],
 ) -> str:
-    toc_page_blocks = [
-        f"--- PDF Page {page_number} ---\n{page_text}".strip() for page_number, page_text in toc_pages
-    ]
-    return (
-        "TOC source pages:\n"
-        + "\n\n".join(toc_page_blocks)
-        + "\n\nDeterministically parsed TOC entries:\n"
-        + json.dumps(parsed_entries, indent=2)
-    )
+    parts: list[str] = []
+    if toc_pages:
+        toc_page_blocks = [
+            f"--- PDF Page {page_number} ---\n{page_text}".strip() for page_number, page_text in toc_pages
+        ]
+        parts.append("TOC source pages:\n" + "\n\n".join(toc_page_blocks))
+    parts.append("Deterministically parsed TOC entries:\n" + json.dumps(parsed_entries, indent=2))
+    return "\n\n".join(parts)
 
 
 def openai_output_schema() -> dict[str, Any]:
     return {
         "type": "object",
+        "additionalProperties": False,
         "required": [
-            "strategy",
-            "toc_entries",
-            "top_level_sections",
-            "narrative_end_recommendation",
+            "toc_sections",
+            "recommended_narrative_end_report_page",
+            "recommended_narrative_end_section_title",
+            "confidence",
+            "notes",
+            "n_a_fields",
+            "fallback_reason",
         ],
         "properties": {
-            "strategy": {"type": "string"},
-            "toc_entries": {
+            "toc_sections": {
                 "type": "array",
                 "items": {
                     "type": "object",
-                    "required": ["section_number", "title", "report_page", "section_type"],
+                    "additionalProperties": False,
+                    "required": [
+                        "section_number",
+                        "title",
+                        "report_page",
+                        "level",
+                        "section_type",
+                    ],
                     "properties": {
                         "section_number": {"type": ["string", "null"]},
                         "title": {"type": "string"},
                         "report_page": {"type": "integer", "minimum": 1},
-                        "section_type": {"type": "string", "enum": ["narrative", "non_narrative"]},
+                        "level": {"type": "integer", "minimum": 1},
+                        "section_type": {
+                            "type": "string",
+                            "enum": [
+                                "narrative",
+                                "appendix",
+                                "exhibit",
+                                "figure_table",
+                                "boring_logs",
+                                "unknown",
+                            ],
+                        },
                     },
-                    "additionalProperties": False,
                 },
             },
-            "top_level_sections": {
-                "type": "array",
-                "items": {
-                    "type": "object",
-                    "required": ["section_number", "title", "report_page", "section_type"],
-                    "properties": {
-                        "section_number": {"type": ["string", "null"]},
-                        "title": {"type": "string"},
-                        "report_page": {"type": "integer", "minimum": 1},
-                        "section_type": {"type": "string", "enum": ["narrative", "non_narrative"]},
-                    },
-                    "additionalProperties": False,
-                },
-            },
-            "narrative_end_recommendation": {
-                "type": ["object", "null"],
-                "required": ["report_page", "section_number", "section_title", "reason"],
-                "properties": {
-                    "report_page": {"type": "integer", "minimum": 1},
-                    "section_number": {"type": ["string", "null"]},
-                    "section_title": {"type": "string"},
-                    "reason": {"type": "string"},
-                },
-                "additionalProperties": False,
-            },
+            "recommended_narrative_end_report_page": {"type": ["integer", "null"], "minimum": 1},
+            "recommended_narrative_end_section_title": {"type": ["string", "null"]},
+            "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+            "notes": {"type": "array", "items": {"type": "string"}},
+            "n_a_fields": {"type": "array", "items": {"type": "string"}},
+            "fallback_reason": {"type": ["string", "null"]},
         },
-        "additionalProperties": False,
     }
 
 
 def call_openai_toc_interpreter(
     *,
-    text: str,
-    pages: list[tuple[int, str]],
-    toc_page_pdf: int,
-    toc_pages: list[tuple[int, str]],
-    parsed_entries: list[dict[str, object]],
+    toc_entries: list[dict[str, object]],
+    toc_pages: list[tuple[int, str]] | None,
     model: str,
     timeout_seconds: int,
 ) -> dict[str, object]:
     prompt = (
         "You are interpreting a geotechnical report table of contents.\n"
         "Return strict JSON only.\n"
-        "Use the provided TOC source pages as the primary evidence.\n"
-        "Use the deterministically parsed entries to correct OCR or parsing noise, but do not invent sections.\n"
-        "Mark appendix/exhibit/attachment/boring-log/back-matter content as non_narrative.\n"
+        "Use the TOC source pages as the primary evidence when available.\n"
+        "Use the deterministically parsed TOC entries to correct OCR or parsing noise, but do not invent sections.\n"
+        "Classify sections into one of: narrative, appendix, exhibit, figure_table, boring_logs, unknown.\n"
         "Choose the last top-level narrative section as the recommended narrative endpoint.\n"
-        "Keep section titles and numbering source-faithful when possible."
+        "Set level to 1 for top-level sections and increment for numbered subsections.\n"
+        "Use confidence high, medium, or low.\n"
+        "If no recommendation can be made, set recommended fields to null and explain why in notes and fallback_reason."
     )
     payload = {
         "model": model,
@@ -349,7 +375,7 @@ def call_openai_toc_interpreter(
                 "content": [
                     {
                         "type": "input_text",
-                        "text": prompt + "\n\n" + build_llm_input(toc_pages, parsed_entries),
+                        "text": prompt + "\n\n" + build_llm_input(toc_pages, toc_entries),
                     }
                 ],
             }
@@ -357,7 +383,7 @@ def call_openai_toc_interpreter(
         "text": {
             "format": {
                 "type": "json_schema",
-                "name": "toc_interpreter_result",
+                "name": "toc_interpreter_output",
                 "schema": openai_output_schema(),
                 "strict": True,
             }
@@ -387,45 +413,49 @@ def call_openai_toc_interpreter(
         raise ValueError("OpenAI response did not include output_text")
 
     llm_result = json.loads(output_text)
-    toc_entries = llm_result.get("toc_entries")
-    top_level_sections = llm_result.get("top_level_sections")
-    recommendation = llm_result.get("narrative_end_recommendation")
-    strategy = str(llm_result.get("strategy", "openai"))
+    if not isinstance(llm_result.get("toc_sections"), list):
+        raise ValueError("OpenAI response missing toc_sections")
+    return llm_result
 
-    if not isinstance(toc_entries, list) or not isinstance(top_level_sections, list):
-        raise ValueError("OpenAI response missing TOC entry arrays")
 
-    selected: dict[str, object] | None = None
-    if isinstance(recommendation, dict):
-        report_page = int(recommendation["report_page"])
-        section_title = str(recommendation["section_title"])
-        section_number = recommendation.get("section_number")
-        for entry in toc_entries:
-            if (
-                int(entry["report_page"]) == report_page
-                and str(entry["title"]) == section_title
-                and entry.get("section_number") == section_number
-            ):
-                selected = entry
-                break
-        if selected is None:
-            selected = {
-                "report_page": report_page,
-                "title": section_title,
-                "section_number": section_number,
-            }
-        strategy = f"openai:{recommendation.get('reason', strategy)}"
-    else:
-        strategy = f"openai:{strategy}"
+def interpret_toc_entries(
+    *,
+    toc_entries: list[dict[str, object]],
+    toc_pages: list[tuple[int, str]] | None = None,
+    use_llm: bool = False,
+    strict_openai: bool = False,
+    llm_model: str = DEFAULT_OPENAI_MODEL,
+    timeout_seconds: int = 60,
+) -> dict[str, object]:
+    load_dotenv()
 
-    return build_final_payload(
-        pages=pages,
-        toc_page_pdf=toc_page_pdf,
-        toc_entries=toc_entries,
-        top_level_sections=top_level_sections,
-        selected=selected,
-        strategy=strategy,
-    )
+    if use_llm and os.environ.get("OPENAI_API_KEY"):
+        try:
+            return call_openai_toc_interpreter(
+                toc_entries=toc_entries,
+                toc_pages=toc_pages,
+                model=llm_model,
+                timeout_seconds=timeout_seconds,
+            )
+        except (OSError, ValueError, KeyError, json.JSONDecodeError, RuntimeError) as exc:
+            if strict_openai:
+                raise RuntimeError(f"OpenAI TOC interpretation failed: {exc}") from exc
+            return deterministic_toc_payload(
+                toc_entries,
+                fallback_reason=f"openai_fallback:{exc}",
+                extra_notes=["OpenAI TOC interpretation failed; deterministic fallback was used."],
+            )
+
+    if use_llm and not os.environ.get("OPENAI_API_KEY"):
+        if strict_openai:
+            raise RuntimeError("OpenAI TOC interpretation failed: OPENAI_API_KEY was not set")
+        return deterministic_toc_payload(
+            toc_entries,
+            fallback_reason="openai_api_key_missing",
+            extra_notes=["OPENAI_API_KEY was not set; deterministic fallback was used."],
+        )
+
+    return deterministic_toc_payload(toc_entries)
 
 
 def interpret_toc(
@@ -435,43 +465,30 @@ def interpret_toc(
     model: str | None = None,
     timeout_seconds: int = 60,
 ) -> dict[str, object]:
-    load_dotenv()
     pages = split_pages(text)
-    toc_page_pdf, toc_pages, parsed_entries = find_toc_pages(pages)
-
-    if toc_page_pdf is None:
-        return build_final_payload(
-            pages=pages,
-            toc_page_pdf=None,
-            toc_entries=[],
-            top_level_sections=[],
-            selected=None,
-            strategy="deterministic:toc_not_found",
-        )
+    _, toc_pages, toc_entries = find_toc_pages(pages)
 
     if mode not in {"auto", "deterministic", "openai"}:
         raise ValueError(f"Unsupported mode: {mode}")
 
-    if mode != "deterministic" and os.environ.get("OPENAI_API_KEY"):
-        try:
-            return call_openai_toc_interpreter(
-                text=text,
-                pages=pages,
-                toc_page_pdf=toc_page_pdf,
-                toc_pages=toc_pages,
-                parsed_entries=parsed_entries,
-                model=model or os.environ.get("OPENAI_MODEL", DEFAULT_OPENAI_MODEL),
-                timeout_seconds=timeout_seconds,
-            )
-        except (OSError, ValueError, KeyError, json.JSONDecodeError, RuntimeError) as exc:
-            if mode == "openai":
-                raise RuntimeError(f"OpenAI TOC interpretation failed: {exc}") from exc
+    if not toc_entries:
+        return build_fallback_payload(
+            fallback_reason="toc_not_found",
+            notes=["No table of contents was found in the provided text."],
+        )
 
-    return interpret_toc_deterministic(text)
+    return interpret_toc_entries(
+        toc_entries=toc_entries,
+        toc_pages=toc_pages,
+        use_llm=(mode in {"auto", "openai"}),
+        strict_openai=(mode == "openai"),
+        llm_model=model or os.environ.get("OPENAI_MODEL", DEFAULT_OPENAI_MODEL),
+        timeout_seconds=timeout_seconds,
+    )
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Interpret TOC and return a narrative endpoint recommendation.")
+    parser = argparse.ArgumentParser(description="Interpret TOC and return structured JSON.")
     parser.add_argument("input_text", type=Path, help="Path to extracted text with page markers.")
     parser.add_argument(
         "-o",
