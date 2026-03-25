@@ -2,6 +2,9 @@
 
 ## Latest Session Result
 
+- Implemented `shared/scripts/toc_interpreter.py` with strict JSON output for TOC sections, section types, and narrative endpoint recommendation
+- Added `shared/schemas/toc_interpreter_output.json` to formalize the TOC interpreter contract
+- `shared/scripts/detect_narrative_end.py` now consumes `toc_interpreter` output for TOC-first endpoint selection before heuristic fallback
 - Direct PDF text extraction is now the primary extraction path
 - PaddleOCR fallback path has been removed from the repo
 - Demo outputs created for TOC-first planning:
