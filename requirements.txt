@@ -1,0 +1,2 @@
+# Runtime dependency for LLM-backed TOC interpretation.
+openai>=1.0.0

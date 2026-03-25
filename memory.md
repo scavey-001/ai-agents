@@ -2,6 +2,19 @@
 
 ## Latest Session Result
 
+- Added a new schema for TOC interpreter output: `shared/schemas/toc_interpreter_output.json`
+- Added `shared/scripts/toc_interpreter.py` with:
+- optional OpenAI-backed TOC interpretation
+- deterministic fallback when API key/model call is unavailable
+- support for `n_a_fields` when information is unknown or low-confidence
+- Updated `shared/scripts/detect_narrative_end.py` to call the TOC interpreter stage
+- New CLI flags in narrative detector:
+- `--use-llm-toc`
+- `--llm-model`
+- LLM failure or missing key now falls back to deterministic TOC interpretation and then existing heuristic behavior
+- Updated `requirements.txt` to include `openai>=1.0.0`
+- Updated `README.md` with optional LLM setup/usage instructions for TOC interpretation
+
 - Direct PDF text extraction is now the primary extraction path
 - PaddleOCR fallback path has been removed from the repo
 - Demo outputs created for TOC-first planning:

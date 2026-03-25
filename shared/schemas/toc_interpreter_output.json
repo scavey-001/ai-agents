@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TOC Interpreter Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "toc_sections",
+    "recommended_narrative_end_report_page",
+    "recommended_narrative_end_section_title",
+    "confidence",
+    "notes",
+    "n_a_fields"
+  ],
+  "properties": {
+    "toc_sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "section_number",
+          "title",
+          "report_page",
+          "level",
+          "section_type"
+        ],
+        "properties": {
+          "section_number": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "report_page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "section_type": {
+            "type": "string",
+            "enum": [
+              "narrative",
+              "appendix",
+              "exhibit",
+              "figure_table",
+              "boring_logs",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "recommended_narrative_end_report_page": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "recommended_narrative_end_section_title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "n_a_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fallback_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

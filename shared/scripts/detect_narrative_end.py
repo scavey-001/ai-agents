@@ -8,6 +8,9 @@ import json
 import re
 import sys
 from pathlib import Path
+from typing import Any
+
+from toc_interpreter import interpret_toc_entries
 
 
 PAGE_MARKER = re.compile(r"^--- Page (\d+) ---$", re.MULTILINE)
@@ -108,7 +111,11 @@ def choose_narrative_end_report_page(
     return None, "all_top_level_sections_non_narrative", None, top_level_sections
 
 
-def detect_with_toc(pages: list[tuple[int, str]]) -> dict[str, object] | None:
+def detect_with_toc(
+    pages: list[tuple[int, str]],
+    use_llm_toc: bool = False,
+    llm_model: str = "gpt-4.1-mini",
+) -> dict[str, object] | None:
     toc_page_number: int | None = None
     toc_entries: list[dict[str, object]] = []
 
@@ -121,13 +128,36 @@ def detect_with_toc(pages: list[tuple[int, str]]) -> dict[str, object] | None:
     if toc_page_number is None:
         return None
 
-    end_report_page, strategy, selected_section, top_level_sections = choose_narrative_end_report_page(toc_entries)
+    interpreter_result: dict[str, Any] = interpret_toc_entries(
+        toc_entries=toc_entries,
+        use_llm=use_llm_toc,
+        llm_model=llm_model,
+    )
+
+    end_report_page = interpreter_result.get("recommended_narrative_end_report_page")
+    if not isinstance(end_report_page, int):
+        end_report_page = None
+    selected_section = None
+    selected_title = interpreter_result.get("recommended_narrative_end_section_title")
+    if isinstance(selected_title, str):
+        for entry in toc_entries:
+            if str(entry.get("title", "")).strip() == selected_title.strip():
+                selected_section = entry
+                break
+
+    if end_report_page is None:
+        end_report_page, strategy, selected_section, top_level_sections = choose_narrative_end_report_page(toc_entries)
+    else:
+        strategy = "llm_toc_interpreter" if use_llm_toc else "deterministic_toc_interpreter"
+        top_level_sections = [entry for entry in toc_entries if is_top_level_entry(entry)]
+
     if end_report_page is None:
         return {
             "strategy": "toc_failed",
             "toc_page": toc_page_number,
             "toc_entries": toc_entries,
             "top_level_sections": top_level_sections,
+            "toc_interpreter": interpreter_result,
         }
 
     first_narrative_pdf_page = min(toc_page_number + 1, len(pages))
@@ -144,6 +174,7 @@ def detect_with_toc(pages: list[tuple[int, str]]) -> dict[str, object] | None:
         "toc_entries": toc_entries,
         "top_level_sections": top_level_sections,
         "selected_end_section": selected_section,
+        "toc_interpreter": interpreter_result,
         "detected_narrative_end_page": detected_end_page,
         "detected_narrative_end_report_page": end_report_page,
         "total_pages_seen": len(pages),
@@ -183,9 +214,17 @@ def detect_with_heuristics(pages: list[tuple[int, str]]) -> dict[str, object]:
     }
 
 
-def detect_narrative_end(text: str) -> dict[str, object]:
+def detect_narrative_end(
+    text: str,
+    use_llm_toc: bool = False,
+    llm_model: str = "gpt-4.1-mini",
+) -> dict[str, object]:
     pages = split_pages(text)
-    toc_result = detect_with_toc(pages)
+    toc_result = detect_with_toc(
+        pages,
+        use_llm_toc=use_llm_toc,
+        llm_model=llm_model,
+    )
     if toc_result and toc_result.get("detected_narrative_end_page") is not None:
         return toc_result
     heuristic_result = detect_with_heuristics(pages)
@@ -210,10 +249,24 @@ def main() -> int:
         type=Path,
         help="Optional output JSON path for the detection metadata.",
     )
+    parser.add_argument(
+        "--use-llm-toc",
+        action="store_true",
+        help="Enable LLM-backed TOC interpretation if OPENAI_API_KEY is available.",
+    )
+    parser.add_argument(
+        "--llm-model",
+        default="gpt-4.1-mini",
+        help="Model name to use for LLM TOC interpretation.",
+    )
     args = parser.parse_args()
 
     text = args.input_text.read_text(encoding="utf-8")
-    result = detect_narrative_end(text)
+    result = detect_narrative_end(
+        text,
+        use_llm_toc=args.use_llm_toc,
+        llm_model=args.llm_model,
+    )
 
     if args.output:
         args.output.write_text(str(result["narrative_text"]) + "\n", encoding="utf-8")
